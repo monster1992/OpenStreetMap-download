@@ -1,0 +1,12 @@
+from osmviz.manager import PILImageManager, OSMManager
+import PIL.Image as Image
+
+imgr4 = PILImageManager('RGB')
+osm = OSMManager(image_manager=imgr4)
+image,bnds = osm.createOSMImage( (36.9364,36.9738,45.3618,45.4490),18 )
+print(image.size)
+#wh_ratio = float(image.size[0]) / image.size[1]
+#image3 = image.resize( (int(800*wh_ratio),800), Image.ANTIALIAS )
+#del image
+data = image.save("nagadeh18.jpg")
+image.show()
